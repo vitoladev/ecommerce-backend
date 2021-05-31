@@ -9,12 +9,14 @@
   },
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
-    "build": "yarn -s run clean && tsc",
+    "build": "yarn -s run clean && yarn -s run generate && tsc",
     "start": "node dist/server",
     "clean": "rm -rf dist",
     "test": "jest",
     "commit": "cz",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "generate": "prisma generate",
+    "seed": "prisma db seed --preview-feature"
   },
     "devDependencies": {
     "typescript": "^4.3.2",
