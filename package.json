@@ -1,0 +1,47 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Victor",
+  "license": "MIT",
+  "engines": {
+    "node": "=14.17.0"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
+    "build": "yarn -s run clean && tsc",
+    "start": "node dist/server",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "commit": "cz",
+    "format": "prettier --write ./src"
+  },
+    "devDependencies": {
+    "typescript": "^4.3.2",
+    "@types/node": "^14.17.0",
+    "jest": "^27.0.3",
+    "husky": "^6.0.0",
+    "prisma": "^2.23.0",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.27.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-functional": "^3.2.1",
+    "eslint-plugin-graphql": "^4.0.0",
+    "prettier": "^2.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.23.0",
+    "apollo-server": "^2.25.0",
+    "graphql": "^15.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
