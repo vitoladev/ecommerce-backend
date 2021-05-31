@@ -1,25 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server';
+import { ApolloServer } from 'apollo-server';
+import { schema } from './schema';
+import { context } from './context';
 
-const schema = gql`
-  type Product {
-    id: ID!
-    name: String!
-  }
-  type Query {
-    products: [Product]!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    products: () => [{ id: 1, name: 'Test' }]
-  }
-};
-
-const server = new ApolloServer({
-  typeDefs: schema,
-  resolvers
-});
+const server = new ApolloServer({ schema, context: context });
 
 server
   .listen()
