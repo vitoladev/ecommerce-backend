@@ -18,7 +18,8 @@ module.exports = {
     'plugin:functional/stylitic'
   ],
   rules: {
-    'functional/no-expression-statement': 0,
-    'functional/functional-parameters': 0
+    '@typescript-eslint/no-unsafe-call': 0,
+    '@typescript-eslint/no-unsafe-assignment': 0,
+    'functional/no-expression-statement': 0
   }
 };
