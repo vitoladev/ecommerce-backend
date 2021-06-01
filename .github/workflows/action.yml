@@ -12,7 +12,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.17'
-      - run: npm install -g yarn
-      - run: yarn install
       - run: yarn format
-      - run: yarn build
+      - run: yarn docker:up
