@@ -9,14 +9,17 @@
   },
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
-    "build": "yarn -s run clean && yarn -s run generate && tsc",
+    "build": "yarn clean && yarn generate && tsc",
     "start": "node dist/server",
     "clean": "rm -rf dist",
-    "test": "jest",
     "commit": "cz",
     "format": "prettier --write ./src",
     "generate": "prisma generate",
-    "seed": "prisma db seed --preview-feature"
+    "seed": "prisma db seed --preview-feature",
+    "migrate": "prisma migrate dev",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "test": "yarn docker:up && jest -i"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
