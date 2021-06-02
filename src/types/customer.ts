@@ -22,6 +22,11 @@ export type tokenType = {
   readonly customer: Customer;
 };
 
+export type LoginInput = {
+  readonly email: string;
+  readonly password: string;
+};
+
 export const customerTypeDefs = gql`
   scalar DateTime
   type Customer {
@@ -67,9 +72,15 @@ export const customerTypeDefs = gql`
     address: CreateAddress!
   }
 
+  input LoginCustomer {
+    email: String!
+    password: String!
+  }
+
   extend type Query {
     customers: [Customer]!
     customerById(id: ID!): Customer
+    login(input: LoginCustomer): Token!
   }
 
   extend type Mutation {
