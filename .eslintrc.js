@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unsafe-call': 0,
     '@typescript-eslint/no-unsafe-assignment': 0,
-    'functional/no-expression-statement': 0
+    'functional/no-expression-statement': 0,
+    'functional/no-conditional-statement': 0
   }
 };

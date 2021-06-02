@@ -9,7 +9,6 @@ RUN yarn
 
 COPY . .
 
-RUN yarn migrate
 RUN yarn build
 
 EXPOSE 4000
